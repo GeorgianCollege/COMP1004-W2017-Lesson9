@@ -32,13 +32,17 @@
             this._comp1004_w2017DataSet = new COMP1004_W2017_Lesson9._comp1004_w2017DataSet();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new COMP1004_W2017_Lesson9._comp1004_w2017DataSetTableAdapters.UsersTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UsersDataGridView = new System.Windows.Forms.DataGridView();
+            this.comp1004namesDataSet = new COMP1004_W2017_Lesson9.comp1004namesDataSet();
+            this.comp1004namesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._comp1004_w2017DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comp1004namesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comp1004namesDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _comp1004_w2017DataSet
@@ -55,20 +59,35 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // UsersDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UsersDataGridView.AllowUserToAddRows = false;
+            this.UsersDataGridView.AllowUserToDeleteRows = false;
+            this.UsersDataGridView.AllowUserToOrderColumns = true;
+            this.UsersDataGridView.AutoGenerateColumns = false;
+            this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.usersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(705, 327);
-            this.dataGridView1.TabIndex = 0;
+            this.UsersDataGridView.DataSource = this.usersBindingSource;
+            this.UsersDataGridView.Location = new System.Drawing.Point(12, 60);
+            this.UsersDataGridView.Name = "UsersDataGridView";
+            this.UsersDataGridView.ReadOnly = true;
+            this.UsersDataGridView.RowTemplate.Height = 24;
+            this.UsersDataGridView.Size = new System.Drawing.Size(705, 327);
+            this.UsersDataGridView.TabIndex = 0;
+            this.UsersDataGridView.SelectionChanged += new System.EventHandler(this.UsersDataGridView_SelectionChanged);
+            // 
+            // comp1004namesDataSet
+            // 
+            this.comp1004namesDataSet.DataSetName = "comp1004namesDataSet";
+            this.comp1004namesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comp1004namesDataSetBindingSource
+            // 
+            this.comp1004namesDataSetBindingSource.DataSource = this.comp1004namesDataSet;
+            this.comp1004namesDataSetBindingSource.Position = 0;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -76,6 +95,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -93,7 +113,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(741, 455);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.UsersDataGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -101,7 +121,9 @@
             this.Load += new System.EventHandler(this.DataForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this._comp1004_w2017DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comp1004namesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comp1004namesDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,7 +132,9 @@
         private _comp1004_w2017DataSet _comp1004_w2017DataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private _comp1004_w2017DataSetTableAdapters.UsersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView UsersDataGridView;
+        private System.Windows.Forms.BindingSource comp1004namesDataSetBindingSource;
+        private comp1004namesDataSet comp1004namesDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
